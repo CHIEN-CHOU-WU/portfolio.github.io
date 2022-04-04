@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ctypto Forecasting</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="generic.html">About Me</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li class="active"><a href="cryptoPrediction.html">Ctypto Forecasting</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+							<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Crypto Forecasting</h1>
+									<ul class="actions special">
+										<li><a href="https://github.com/CHIEN-CHOU-WU/G-Research-Crypto-Forecasting" target="_blank" class="button">View Code</a></li>
+									</ul>
+								</header>
+								<div class="image main"><img src="images/crypto/crypto.jpg" alt="" /></div>
+								<h3>Abstract</h3>
+								<p>Over $40 billion worth of cryptocurrencies are traded every day and a lot of people are getting into the culture of cryptocurrencies. From being the most mind blowing concept of technology in the tech world, it has now become the generic form of transaction in the digital money field, breaking the stereotype towards conventional usage of money. Simultaneously, with the increase of people making use of cryptocurrencies, the possibility to predict the pattern for future scopes have paved their way. The proposed system makes use of the deep learning model, Long Term Short Memory (LSTM) and XG Boost , along with new activation functions to forecast short term returns in 14 popular crypto currencies. XG Boost is a highly effective and widely used machine learning method. It is used widely by data scientists to achieve state-of-art results on many machine learning challenges. These models have achieved great results over the last few years so everyone uses these for most tabular competitions. The results are evaluated based on the Mean Absolute Error (MAE) and the MAE for both the models are pretty valid leading to an overall decent accuracy.</p>
+								<h3>Introduction</h3>
+								<p>Over the years, the world has been exposed to a wide variety of technological advancements such as smart devices, digital payments and e-commerce. Cryptocurrencies are considered to be the future of banking and transactions. An estimation of 106 million people worldwide use cryptocurrency for their daily transactions and billings. A cryptocurrency (or “crypto”) is a digital currency that is used by people to buy goods and services in an online platform that leads with strong cryptography to secure online transactions. Their behaviour of having fluctuating values have made some of them millionaires and the rest bankrupt. Cryptocurrencies have become majorly popular among people because of their certain properties like not requiring a third party such as a bank for transferring funds. Even though, the concept of cryptocurrencies was not welcomed at first, they have now become a vital part of the trading and the finance industry. Nowadays, with the development of new technologies, these cryptocurrency values can be predicted for future reference in advance.</p>
+								<h3>Dataset</h3>
+								<p>The dataset for the above mentioned problem is taken from Kaggle. It is a current on-going competition. The competition is called ‘G-Research Crypto Forecasting’. Millions of rows of high-frequency market data dating back to 2018 were collected by G-Research. There are two different csv files of datasets. The first dataset is the asset_details.csv file which consists of the 13 different cryptocurrency available along with their weights and asset_id.</p>
+								<h3>Data Visualization</h3>
+								<p>1. Plot training data distribution among different Assets (Crypto Currencies)</p>
+								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis1.jpg" alt="" /></div>
+								<p>2. Plot candlestick chart for Bitcoin as an example</p>
+								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis2.jpg" alt="" /></div>
+								<p>3. Plot volume trade</p>
+								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis3.jpg" alt="" /></div>
+								<h3>Results</h3>
+								<p>By using XG-Boost model, we got a very good performance. It shows good result that both training loss and validation loss converge after 10 rounds. There is a little gap between training loss and validation loss which is a very good result to see.</p>
+								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result1.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result2.jpg" alt="" /></div>
+								<p>The above represents the comparison between the loss and epoch in the LSTM model for the two different types of data i.e. the Train loss and Validation loss. It is portrayed that as the number of epoch increases, the loss value becomes smaller. Hence, the loss is inversely proportional to the epoch number. The red line represents the Validation Loss. This Validation Loss indicates how well the model fits new data. The blue line represents the Train Loss which indicates how well the model is fitting the training data. It can be clearly seen that the Validation Loss is better than the Train Loss which means that the validation dataset is easier to predict than the training dataset. The results are accurate enough as they are produced by the LSTM model which accounts for efficient time series generation prediction.
+									After we submitted to Kaggle we got 479 rank out of 1067 participant. We got 0.3752 (XG-Boost with hyperparameters tuning) for our final submit, which is an improvement of our previous scores of 0.3550 (XG-Boost without hyperparameters tuning).
+									</p>
+									<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result3.jpg" alt="" /></div>
+								<h3>References</h3>
+								<p>
+									<ol>
+										<li>Chen, T., & Guestrin, C. (2016, August). Xgboost: A scalable tree boosting system. In Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining (pp. 785-794).</li>
+										<li>Iqbal, M., Iqbal, M. S., Jaskani, F. H., Iqbal, K., & Hassan, A. (2021). Time-Series Prediction of Cryptocurrency Market using Machine Learning Techniques. EAI Endorsed Transactions on Creative Technologies, e4.</li>
+										<li>Hitam, N. A., & Ismail, A. R. (2018). Comparative performance of machine learning algorithms for cryptocurrency forecasting. Ind. J. Electr. Eng. Comput. Sci, 11(3), 1121-1128.</li>
+										<li>S. Tandon, S. Tripathi, P. Saraswat and C. Dabas, "Bitcoin Price Forecasting using LSTM and 10-Fold Cross validation," 2019 International Conference on Signal Processing and Communication (ICSC), 2019, pp. 323-328, doi: 10.1109/ICSC45622.2019.8938251.</li>
+										<li>Livieris, I.E.; Kiriakidou, N.; Stavroyiannis, S.; Pintelas, P. An Advanced CNN-LSTM Model for Cryptocurrency Forecasting. Electronics 2021, 10, 287. https://doi.org/10.3390/electronics10030287</li>
+									</ol>
+								</p>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>Saint Louis, MO 63108</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p><a href="#">(314) 365-9259</a></p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">johnson12440@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+								<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
