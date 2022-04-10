@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Logist Regression From Scratch</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="aboutMe.html">About Me</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li class="active"><a href="cryptoPrediction.html">Logist Regression From Scratch</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+							<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Logist Regression From Scratch</h1>
+									<ul class="actions special">
+										<li><a href="https://github.com/CHIEN-CHOU-WU/logistic_regression_from_scratch/blob/main/logistic_regression_from_scratch.ipynb" target="_blank" class="button">View Code</a></li>
+									</ul>
+								</header>
+								<div class="image main"><img src="images/iris/iris.jpeg" alt="" /></div>
+								<h3>Abstract</h3>
+								<p>
+									In order to better understanding how Logistic Regression work, I code the Logistic Regression from scratch to predict iris flower species. The data is loaded from well-known Scikit-Learn package and the result is compared by sk-learn built-in LogisticRegression function.
+								</p>
+
+								<h3>Method</h3>
+								<h4>Load Data</h4>
+								<p>
+									First, load data from sk-learn package.
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/cbe334a60f2096586ba6b43a8105746f.js"></script>
+									Let's show the keys in iris data.
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/14f1f92f28574365b5c2b6634e6d02a3.js"></script>
+									-> ['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename']
+								</p>
+								<p>
+									Put iris data in X
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/d6527f0d0e435b6feefe79dc2fd96f68.js"></script>
+									-> array([5.1, 3.5, 1.4, 0.2])
+								</p>
+								<p>
+									Put iris target in y
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/2a5dbd6d1173c12de9f7266459bcbd92.js"></script>
+								</p>
+								<p>
+									Shape of X and y: <br>
+									X.shape = (150, 4) <br>
+									y.shape = (150,)
+								</p>
+								<h4>Function</h4>
+								<p>
+									Let's create a sigmoid function:
+									$$ \begin{equation} P(Class|x) = \sigma(z) = \frac{1}{1 + \exp(-z)} = \frac{1}{1+\exp(-(\theta_0 + \sum_{i=1}^d\theta_ix_i))} \end{equation} $$
+									In this case, d = 4:
+									$$ \begin{equation} P(Class|x) = \frac{1}{1+\exp(-(\theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4))} \end{equation} $$
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/77bd4e32b30f9de5a61fb2cbdf6140a3.js"></script>
+								</p>
+								<p>
+									Logistic Regression model Prediction (Single training instance):
+									$$\begin{equation}
+									\hat{y_{}} = \left\{
+									\begin{aligned}
+									0 \ \text{ if } \ \hat{p_{}} < 0.5 \\
+									1 \ \text{ if } \ \hat{p_{}} > 0.5 \end{aligned}
+									\right.
+									\end{equation}$$
+									Cost function of a single training instance:
+									$$\begin{equation}
+									Loss(x_i) = \left\{
+									\begin{aligned}
+									-\log(\hat{p_i}) \ \text{ if } \ y_i = 1 \\
+									-\log(1 - \hat{p_i}) \ \text{ if } \ y_i = 0 \end{aligned}
+									\right.
+									\end{equation}$$
+									Somehow we can redefine cost function (single training instance):
+									$$Loss(x_i)=-[y_i\cdot log_2(\hat{p_{i}}) + (1 - y_i) \cdot log_2(1 - \hat{p_{i}})]$$
+									Calculate Binary Cross-Entropy loss over the whole data given selected weights and b:
+									$$\begin{equation}Loss(\theta) = -\frac{1}{N}\sum_{i=1}^N y^{(i)}\cdot log_2(\hat{p_{}}^{(i)}) + (1 - y^{(i)}) \cdot log_2(1 - \hat{p_{}}^{(i)}) \end{equation}$$
+									where $y_i$ is real label and $\hat{p_{}}$ is predicted value.
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/583973ea19f3dfd423b295d19afe290b.js"></script>
+								</p>
+								<p>
+									Derivatives for Binary cross-entropy. <br>
+									Using chain rule:
+									$$\begin{equation} \frac{\partial Loss(\theta)}{\partial \theta_j} = \frac{\partial Loss(\theta)}{\partial p_i} \frac{\partial p_i}{\partial \theta_j} \end{equation}$$
+									where
+									$$\frac{\partial Loss(\theta)}{\partial p_i} = -\frac{1}{N}\sum_{i=1}^N \left[\frac{y^{(i)}}{\hat{p_{}}^{(i)}} - \frac{1 - y^{(i)}}{1 - \hat{p_{}}^{(i)}} \right],$$
+									$$\frac{\partial p_i}{\partial\theta_j} = - \hat{p_{}}^{(i)}(1 - \hat{p_{}}^{(i)})\cdot x_j^{(i)}.$$
+									Replace the first quation:
+									$$\begin{equation} \frac{\partial Loss(\theta)}{\partial \theta_j} = -\frac{1}{N} \sum^{N}_{i=1}\left[ (y^{(i)} - \hat{p_{}}^{(i)}) \cdot x_j^{(i)}) \right] \end{equation}$$
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/52d372583d77e5cd687c80070973d18f.js"></script>
+								</p>
+								<p>
+									Create an iteration function <br>
+									<ol>
+										<li>Initialize all gradient parameters as 0.</li>
+										<li>Iterate through all X_train data, create a linear model first, then apply sigmoid function as activation function.</li>
+										<li>Derivatives to find gradients.</li>
+										<li>Update gradient parameters.</li>
+										<li>Calculate Loss Function.</li>
+										<li>Repeat (1) - (5) untill reach the max_iter or meet the early stopping condition.</li>
+									</ol>
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/6ee7ff665e2944ee4318b094c9fae691.js"></script>
+								</p>
+								<p>
+									Finally, the logistic regression function. <br>
+									Applying Logistic Regression model Prediction (Single training instance) described above:
+									$$\begin{equation}
+									\hat{y_{}} = \left\{
+									\begin{aligned}
+									0 \ \text{ if } \ \hat{p_{}} < 0.5 \\
+									1 \ \text{ if } \ \hat{p_{}} > 0.5 \end{aligned}
+									\right.
+									\end{equation}$$
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/33305ef480b323b1ae02ddfa3ca9730f.js"></script>
+								</p>
+
+								<h4>Hyper-parameter</h4>
+								<p>
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/4f46af5166d0b83e891ab5bc87ff3eaa.js"></script>
+								</p>
+								<h4>Pipeline</h4>
+								<p>
+									1. Split Iris data into training/validation/testing with ratios 80% train, 10% val, 10% test. Report the number of samples in three datasets (training/validation/testing).
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/49aa146616f7b53e9fe49b99457a71a1.js"></script>
+									-> Shape of X_train: (120, 4) <br>
+									-> Shape of y_train: (120,) <br>
+									-> Shape of X_val: (15, 4) <br>
+									-> Shape of y_val: (15,) <br>
+									-> Shape of X_test: (15, 4) <br>
+									-> Shape of y_test: (15,)
+								</p>
+								<p>
+									2. Visualize the learning curve for “Loss VS epochs” for model training.
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/34f94649f245e058bdee97525e5d601b.js"></script>
+									<div class="image main" style="max-width: 500px;"><img src="images/iris/output.png" alt="" /></div>
+								</p>
+								<p>
+									3. Final accuracy on training, validation, and testing dataset. <br>
+									- Train data accuray:
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/2fa930a95b40c4dd2a183fdde703eea9.js"></script>
+									-> 0.6833333333333333 <br>
+									<br>
+									- Validation data
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/eff00cb709ea91355e453a5c0770407a.js"></script>
+									-> 0.9333333333333333 <br>
+									<br>
+									- Testing data
+									<script src="https://gist.github.com/CHIEN-CHOU-WU/ca9626bcd5172484f3e87fd79b8c1553.js"></script>
+									-> 0.9333333333333333
+								</p>
+
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="post" action="https://formspree.io/f/mzboawwr">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>Saint Louis, MO 63108</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p><a href="#">(314) 365-9259</a></p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">johnson12440@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+								<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/x-mathjax-config">
+				MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+			</script>
+			<script type="text/javascript"
+				src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+			</script>
+
+	</body>
+</html>

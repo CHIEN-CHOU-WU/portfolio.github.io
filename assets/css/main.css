@@ -4700,3 +4700,9 @@ input, select, textarea {
   .btn:hover {
 	background-color: RoyalBlue;
   }
+
+  code {
+	display: block;
+	white-space: pre-wrap   
+  }
+  
