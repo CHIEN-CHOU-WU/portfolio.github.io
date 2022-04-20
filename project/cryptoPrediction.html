@@ -9,7 +9,7 @@
 		<title>Ctypto Forecasting</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -25,9 +25,10 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li><a href="aboutMe.html">About Me</a></li>
-							<li><a href="resume.html">Resume</a></li>
+							<li><a href="../index.html">Work</a></li>
+							<li><a href="../projects.html">Projects</a></li>
+							<li><a href="../aboutMe.html">About Me</a></li>
+							<li><a href="../resume.html">Resume</a></li>
 							<li class="active"><a href="cryptoPrediction.html">Ctypto Forecasting</a></li>
 						</ul>
 						<ul class="icons">
@@ -48,7 +49,7 @@
 										<li><a href="https://github.com/CHIEN-CHOU-WU/G-Research-Crypto-Forecasting" target="_blank" class="button">View Code</a></li>
 									</ul>
 								</header>
-								<div class="image main"><img src="images/crypto/crypto.jpg" alt="" /></div>
+								<div class="image main"><img src="../images/crypto/crypto.jpg" alt="" /></div>
 								<h3>Abstract</h3>
 								<p>Over $40 billion worth of cryptocurrencies are traded every day and a lot of people are getting into the culture of cryptocurrencies. From being the most mind blowing concept of technology in the tech world, it has now become the generic form of transaction in the digital money field, breaking the stereotype towards conventional usage of money. Simultaneously, with the increase of people making use of cryptocurrencies, the possibility to predict the pattern for future scopes have paved their way. The proposed system makes use of the deep learning model, Long Term Short Memory (LSTM) and XG Boost , along with new activation functions to forecast short term returns in 14 popular crypto currencies. XG Boost is a highly effective and widely used machine learning method. It is used widely by data scientists to achieve state-of-art results on many machine learning challenges. These models have achieved great results over the last few years so everyone uses these for most tabular competitions. The results are evaluated based on the Mean Absolute Error (MAE) and the MAE for both the models are pretty valid leading to an overall decent accuracy.</p>
 								<h3>Introduction</h3>
@@ -57,19 +58,19 @@
 								<p>The dataset for the above mentioned problem is taken from Kaggle. It is a current on-going competition. The competition is called ‘G-Research Crypto Forecasting’. Millions of rows of high-frequency market data dating back to 2018 were collected by G-Research. There are two different csv files of datasets. The first dataset is the asset_details.csv file which consists of the 13 different cryptocurrency available along with their weights and asset_id.</p>
 								<h3>Data Visualization</h3>
 								<p>1. Plot training data distribution among different Assets (Crypto Currencies)</p>
-								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis1.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Vis1.jpg" alt="" /></div>
 								<p>2. Plot candlestick chart for Bitcoin as an example</p>
-								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis2.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Vis2.jpg" alt="" /></div>
 								<p>3. Plot volume trade</p>
-								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Vis3.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Vis3.jpg" alt="" /></div>
 								<h3>Results</h3>
 								<p>By using XG-Boost model, we got a very good performance. It shows good result that both training loss and validation loss converge after 10 rounds. There is a little gap between training loss and validation loss which is a very good result to see.</p>
-								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result1.jpg" alt="" /></div>
-								<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result2.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Result1.jpg" alt="" /></div>
+								<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Result2.jpg" alt="" /></div>
 								<p>The above represents the comparison between the loss and epoch in the LSTM model for the two different types of data i.e. the Train loss and Validation loss. It is portrayed that as the number of epoch increases, the loss value becomes smaller. Hence, the loss is inversely proportional to the epoch number. The red line represents the Validation Loss. This Validation Loss indicates how well the model fits new data. The blue line represents the Train Loss which indicates how well the model is fitting the training data. It can be clearly seen that the Validation Loss is better than the Train Loss which means that the validation dataset is easier to predict than the training dataset. The results are accurate enough as they are produced by the LSTM model which accounts for efficient time series generation prediction.
 									After we submitted to Kaggle we got 479 rank out of 1067 participant. We got 0.3752 (XG-Boost with hyperparameters tuning) for our final submit, which is an improvement of our previous scores of 0.3550 (XG-Boost without hyperparameters tuning).
 									</p>
-									<div class="image main" style="max-width: 500px;"><img src="images/crypto/Result3.jpg" alt="" /></div>
+									<div class="image main" style="max-width: 500px;"><img src="../images/crypto/Result3.jpg" alt="" /></div>
 								<h3>References</h3>
 								<p>
 									<ol>
