@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AI Envirenment for Camelot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="../index.html">Work</a></li>
+							<li><a href="../projects.html">Projects</a></li>
+							<li><a href="../aboutMe.html">About Me</a></li>
+							<li><a href="../resume.html">Resume</a></li>
+							<li class="active"><a href="camelot.html">AI Envirenment for Camelot</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+							<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>AI Envirenment for Camelot</h1>
+									<ul class="actions special">
+										<li><a href="https://gitlab.com/JohnsonWu/ai_camelot" target="_blank" class="button">View Project</a></li>
+									</ul>
+								</header>
+								<div>
+									<p>
+										AI can be used to enhance automation and help eliminate the necessity for humans to perform tedious tasks.
+										Writing Non-Player Characters (NPCs) logic can be a very fun and creative process, but it can sometimes take a very long time.
+										So why not develop and train AI models that can survive in real life-like scenarios, visualize the simulations by using game engines, and at the same time study their actions?
+
+									</p>
+									<h2>
+										Project Overview:
+									</h2>
+									<p>
+										Create a fully automated ecosystem of NPCs using <b>Reinforcement Learning</b>. With the aid of reinforcement learning, create multiple agents or models for each NPCs to automatically conduct various tasks and create settings similar to human behaviors like satisfying basic needs like hunger, thirst, and energy. These agents will be trained on simulations of states and actions which will allow the NPCs to act on their own will. The goal is to create agents or models that allow the NPCs to act on their own without any written instructions and ultimately creating an ecosystem with no outside guides.
+									</p>
+									<p>
+										Once an ecosystem is established with fully automated NPCs, multiple layers can be introduced such as a trading system, distribution of wealth, each of the NPCs happiness, establishing supply and demand, different skills and traits for the NPCs, and etc. When different layers are introduced, a study can be done to see the effects of each event to the ecosystem.
+									</p>
+									<h2>
+										AI Agents
+									</h2>
+									<p>
+										AI Agents are trained in simulated environments 1 million iteration per model.
+										All models continuously learn in deployed environment
+									</p>
+									<h3>Occupations</h3>
+									<p>
+										<ul>
+											Different skills allows NPCs to do better in certain occupations:
+											<li>No skills
+											<li>Produce more food</li>
+											<li>Take advantage of profit margins</li>
+											<li>Get paid more during worker shortage</li>
+											<li>Get paid more wages for working</li>
+										</ul>
+										<img src="../images/camelot/NPC.png" alt="" width="50%">
+									</p>
+									<h3>
+										Deep Reinforcement Learning Model
+									</h3>
+									<p>
+										<a href="https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1", target="_blank">Proximal Policy Optimization (PPO) Model.</a> Learns from a small batch of experience.
+									</p>
+									<img src="../images/camelot/RL.png" alt="" width="50%">
+									<h3>Reward</h3>
+									<p>
+										0.5 per second alive + happiness <br>
+										Happiness = health + hunger + energy + wealth [-3 to 3]
+									</p>
+									<img src="../images/camelot/reward.png" alt="" width="80%">
+									<h3>Goals</h3>
+									<p>
+										<ul>
+											<li>Satisfy hunger and energy.</li>
+											<li>Maintain health.</li>
+											<li>Accumulate wealth.</li>
+											<li>Change occupations based on economic conditions.</li>
+											<li>To make the reward as high as possible.</li>
+										</ul>
+									</p>
+									<h3>
+										Simulation
+									</h3>
+									<p>
+										<img src="../images/camelot/simulation.png" alt="" width="80%">
+									</p>
+									<h3>
+										Models Results
+									</h3>
+									<p>
+										<img src="../images/camelot/model_results.png" alt="" width="80%">
+									</p>
+									<h2>
+										Environment Rules
+									</h2>
+									<p>
+										<ol>
+											<li>Satisfy hunger & energy else health declines</li>
+											<li>Conduct actions on their own with no help from humans</li>
+											<li>Must adapt and survive from different elements introduced in the environment</li>
+										</ol>
+									</p>
+									<h2>
+										AI Camelot Integration
+									</h2>
+									<h3>
+										Character controlled by AI (Game Play)
+									</h3>
+									<p>
+										<img src="../images/camelot/GamePlay_Kate.gif" alt="" width="80%">
+									</p>
+									<h3>
+										GUI
+									</h3>
+									<p>
+										<img src="../images/camelot/gui.gif" alt="" width="80%">
+									</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="post" action="https://formspree.io/f/mzboawwr">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>Saint Louis, MO 63108</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p><a href="#">(314) 365-9259</a></p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">johnson12440@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+								<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
