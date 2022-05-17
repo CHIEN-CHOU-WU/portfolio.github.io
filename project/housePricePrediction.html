@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>House price prediction [Kaggle]</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="../index.html">Work</a></li>
+							<li><a href="../projects.html">Projects</a></li>
+							<li><a href="../aboutMe.html">About Me</a></li>
+							<li><a href="../resume.html">Resume</a></li>
+							<li class="active"><a href="housePricePrediction.html">House price prediction [Kaggle]</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+							<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>House price prediction [Kaggle]</h1>
+									<ul class="actions special">
+										<li><a href="https://github.com/CHIEN-CHOU-WU/house_price_prediction" target="_blank" class="button">View Code</a></li>
+									</ul>
+								</header>
+								<div class="image main"><img src="../images/house_price/house.jpg" alt="" /></div>
+								<h3>Abstract</h3>
+								<p>
+									Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement or the proximity to an east-west railroad. But this competition's dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence. With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges us to predict the final price of each home. The predicted value “SalePrice” will be given by data cleaning, feature engineering, model building and tuning skills we used. This is a typical regression problem. The root mean square error (RMSE) is selected as the evaluation indicator. In order to make the price level have an equal impact on the evaluation of the result, the root mean square error is calculated based on the logarithm (log) of the predicted value and the actual value.
+								</p>
+								<p>
+									$$\begin{equation}\sqrt{\frac{\sum^N_{i=1}(y_i - \hat{y}_i)^2}{N}}\end{equation}$$
+								</p>
+
+								<h3>Resources</h3>
+                                <p>
+                                    <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank">https://www.kaggle.com/c/house-prices-advanced-regression-techniques</a>
+                                </p>
+
+                                <h3>Mathematical Modeling</h3>
+                                <p>
+                                    Random Forest and XG-Boost are used in this case.
+                                </p>
+                                <h3>Random Forest</h3>
+                                <p>
+                                    The idea of ensemble is to solve the inherent shortcomings of a single model or a certain set of parameter models, in order to integrate more models, learn from each other's strengths, and avoid limitations. Random forest is the product of the idea of ensemble learning, which integrates many decision trees into a forest, and merges them to predict the final result.
+                                </p>
+                                <p style="text-align: center;">
+									<img src="../images/house_price/rf1.jpeg" alt="" style="width: 350px; height: 380px; margin-right: 1em;">
+									<img src="../images/house_price/rf2.png" alt="" style="width: 380px; height: 350px; margin-right: 1em;">
+								</p>
+                                <p>
+                                    An example of an algorithm that is easier to understand: <br>
+                                    Imagine a person who wants to know where he should go during his one-year holiday trip. He will consult friends who know him for advice. At first, he went to find a friend who would ask him where he had been and whether he liked them or not. Based on these answers, he can give him some suggestions. This is a typical decision tree algorithm. Through his answers, the friend worked out some rules to guide the places that should be recommended. Later, he began to seek advice from more and more friends, who would ask him different questions and give some suggestions from them. Finally, he chose the most recommended place, which is the typical random forest algorithm.
+                                </p>
+                                <p>
+                                    <b>Advantages:</b>
+                                    <ol>
+                                        <li>For most of the data, its classification is better than the others.</li>
+                                        <li>It can handle high-dimensional features and will not easy overfitting. The model training speed is relatively fast, especially for large data.</li>
+                                        <li>It can assess the importance of the variable when determine the category.</li>
+                                        <li>Strong ability to adapt to data: it can handle both discrete data and continuous data, and the data does not need to be generalized.</li>
+                                    </ol>
+                                </p>
+                                <p>
+                                    <b>Disadvantages:</b>
+                                    <ol>
+                                        <li>The classification of a small number of data sets and low-dimensional data sets may not achieve good results.</li>
+                                        <li>The calculation speed is slower than a single decision tree.</li>
+                                        <li>Random forest does not do well when inferring independent variables or dependent variables that are out of range.</li>
+                                    </ol>
+                                </p>
+
+                                <h3>XG-Boost</h3>
+                                <h4>Boosting</h4>
+                                <p>
+                                    Unlike Bagging that uses multiple “strong learners”, boosting emphasize using multiple “weak learners”. When the models are "a bit strong", they will start fighting each other. If D1, D2, D3 are too complex (too strong), they will interfere with each other and affect the final prediction/classification results. Only when each other is a "weak learner", can we focus on our own prediction/classification, and then combine each other's results together. This is the concept of Boosting (of course, in terms of computational efficiency, it is faster to do so).
+                                </p>
+                                <p>
+                                    When boosting, first build a simple model D1. At this time, there will be data with incorrect predictions. Increase the weight of these data and build D2 model. After first adjust there will still be data with incorrect predictions, and then increase the weight of the data. Build D3 model...
+                                </p>
+                                <p style="text-align: center;">
+									<img src="../images/house_price/boosting.png" alt="" style="width: 350px; height: 350px; margin-right: 1em;">
+								</p>
+                                <p>
+                                    In general, boosting technique helps reduce bias. Since the use of "weak learner" is used, these weak learners are high bias and low variance. Each iteration will be optimized based on the previous model (using the gradient descent method, it is determined that this model is built on where the loss function can drop the most). Since it is to reduce the loss function, it means that the process will get closer and closer to the actual value. In other words, it means to gradually reduce the bias.
+                                </p>
+
+                                <h3>Extreme Gradient Boosting Machine (XG-Boost)</h3>
+                                <p>
+                                    The so-called Gradient Boosting Machine (GBM) is a concept that combines the gradient descent method with the Boosting package. Machine refers to an unspecified model, if the gradient descent method can be used to find the direction of the model.
+                                    GBM kit is basically Tree-based, that is, hundreds of weak decision trees (CART) are combined with gradient descent and boosting.
+                                </p>
+                                <p>
+                                    Here, we use xgb.cv() function and cross validation to find the optimal number of decision trees n-rounds. In the process, set early_stopping_rounds = 30 (if overfitting has occurred when n-rounds < 30, it means that we don’t need to continue tuning and can stop early), the program will automatically determine whether the model has the average performance based on the average performance of Train and Validation Overfitting, and finally finding better n-rounds, will be the least overfitting model.
+                                </p>
+                                <p>
+                                    It should be noted that this least overfitting model is based on the initial basic parameter settings, so it is not necessarily the best. XG-Boost is an improved version of the Gradient Boosting Decision Tree (GBDT). It uses multiple weak classifiers to construct a strong classifier and uses the negative gradient of the previous m-1 iteration results as the new response variable for the next time iteratively, a new weak classifier (tree) is generated and added to the previous estimation function as a new estimation function.
+                                </p>
+                                <p>
+                                    <b>XG-Boost model:</b>
+
+                                    $$\begin{equation}\hat{y}_i = \hat{f}^M(x_i)=\sum^M_{m=1}h_m(x_i)=\hat{f}^{M-1}(x_i)+h_M(x_i)\end{equation}$$
+
+                                    M is the number of iterations, and h_m is the newly added weak classifier for each iteration. <br>
+                                    By minimizing the objective function
+
+                                    $$\begin{equation}Obj=\sum_{i}L(y_i, \hat{f}^M(x_i)) + \sum_{m}\Omega(h_m )\end{equation}$$
+
+                                    To find the estimation function, and Ω(h_m ) is the constraint function. <br>
+                                    We use Logistic loss function:
+
+                                    $$\begin{equation}L(y_i, f(x)) = y\ln(1+\exp^{-f(x)}) + (1-y)\ln(1+\exp^{f(x)}))\end{equation}$$
+
+                                    As a result of the m-th iteration, the objective function can be written as:
+
+                                    $$\begin{equation}Obj^{(m)}=\sum_{i}L(y_i, \hat{f}^{m-1}(x_i)+h_m(x_i)) + \Omega(h_m) + constant\end{equation}$$
+
+                                    Quadratic approximation using Taylor expansion:
+
+                                    $$\begin{equation}Obj^{(m)}=\sum_{i}[L(y_i, \hat{f}^{m-1}(x_i))+g_i h_m(x_i) + \frac{1}{2}s_ih^2_m(x_i)] + \Omega(h_m) + constant\end{equation}$$
+
+                                    where $$g_i=\partial_{\hat{f}(m-1)}L(y_i,\hat{f}^{m-1}(x_i)) \ \text{ and } \ s_i = \partial^2_{\hat{f}(m-1)}L(y_i, \hat{f}^{m-1}(x_i)).$$
+
+                                    Because the results of the first m-1 times have been determined, 
+
+                                    $$L(y_i,\hat{f}^{m-1}(x_i))$$
+                                    
+                                    is a known constant and incorporated into the constant term, the objective function can be rewritten as:
+
+                                    $$\begin{equation}Obj^{(m)}=\sum_{i}[g_i h_m(x_i) + \frac{1}{2}s_ih^2_m(x_i)] + \Omega(h_m) + constant\end{equation}$$
+
+                                    Assuming the output of sample x falls on the j-th leaf, the output value of sample x is w_j corresponding to the weight of each leaf node. Given a tree, nodes are used for classification. Input a sample, and the output value h_m of the leaves is the predicted decision tree, and the predicted result is determined by the nodes of the decision tree. For classification problems, the leaves of the decision tree refer to categories, and for regression problems, the values of the leaves are values.
+
+                                    $$h_m(x_i)=\sum^{T_m}_{j=1}w_jI(x_i\in R_{jm})$$
+
+                                    where $$T_m$$ is number of nodes. <br><br>
+                                    
+                                    <b>Regulation:</b> <br>
+                                    The regularization of decision trees generally considers the number of leaf nodes and leaf weights. It is common to use the weight of the total number of leaf nodes and the sum of the squares of leaf weights as regular items:
+                                    
+                                    $$\Omega(h_m)=\gamma T_m + \frac{1}{2}\lambda\sum^{T_m}_{j=1}w^2_j.$$
+                                    
+                                    Put it back to the objective function:
+
+                                    $$
+                                        \begin{equation}\begin{aligned}Obj^{(m)} &\approx\sum_{i}[g_i h_m(x_i) + \frac{1}{2}s_ih^2_m(x_i)] + \Omega(h_m)
+                                        \\ &\approx[g_i\sum^{T_m}_{j=1}w_jI(x_i\in R_{jm}) + \frac{1}{2}s_i\sum^{T_m}_{j=1}w^2_jI(x_i\in R_jm)] + \gamma T_m + \frac{1}{2}\lambda\sum^{T_m}_{j=1}w^2_j
+                                        \\ &\approx\sum^{T_m}_{j=1}[(\sum_{x_i\in R_{jm}}g_i)w_i + \frac{1}{2}(\sum_{x_i\in R_{jm}}s_i+\lambda)w^2_j] + \gamma T_m
+                                        \\ &\approx\sum^{T_m}_{j=1}[(G_j)w_j+\frac{1}{2}(s_j+\lambda)w^2_j]+\gamma T_m
+                                        \end{aligned}\end{equation}
+                                    $$
+
+                                    Where 
+
+                                    $$G_j=\sum_{x_i\in R_{jm}}g_i \ \text{ and } \ s_j=\sum{x_i\in R_{jm}}s_i$$
+
+                                    The structure of the tree is determined. In order to minimize the objective function, the derivative can be set to 0, and the optimal prediction score of each leaf node can be solved as:
+
+                                    $$\begin{equation}\begin{aligned}\frac{\partial obj}{\partial w_j} &= 0 \rightarrow w_j^* = -\frac{G_j}{S_j+\lambda}
+                                    \\ obj^{(m)} &= -\frac{1}{2}\sum^{T_m}_{j=1}\frac{G^2_j}{S_j + \lambda} + \gamma T_m
+                                    \end{aligned}\end{equation}$$
+
+                                    where
+
+                                    $$\frac{G_j}{S_j+\lambda}$$
+
+                                    measures the contribution of each leaf node to the overall loss. <br>
+                                    Therefore, to split a leaf node, the gain is defined as:
+
+                                    $$\begin{equation}gain=\frac{1}{2}[\frac{G^2_L}{S_L+\lambda}+\frac{G^2_R}{S_R+\lambda}+\frac{G^2_L}{S+\lambda}]\end{equation} - \gamma$$
+
+                                    Then multiply the result of this iteration h_m (x_i) by learning rate ν and add it to the result of the previous iteration
+
+                                    $$\begin{equation} \hat{f}^{(m)}(x_i) = \hat{(f)}^{(m-1)}(x_i) + vh_m(x_i) \end{equation}.$$
+                                </p>
+
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="post" action="https://formspree.io/f/mzboawwr">
+							<div class="fields">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form>
+					</section>
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>Saint Louis, MO 63108</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p><a href="#">(314) 365-9259</a></p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">johnson12440@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="https://www.linkedin.com/in/chien-chou-wu/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/CHIEN-CHOU-WU" target="_blank" class="icon brands alt fa-github"><span class="label">Ghithub</span></a></li>
+								<li><a href="https://gitlab.com/JohnsonWu" target="_blank" class="icon brands alt fa-gitlab"><span class="label">GitLab</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
