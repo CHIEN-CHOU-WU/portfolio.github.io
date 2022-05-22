@@ -29,8 +29,8 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="../index.html">Work</a></li>
-							<li><a href="../projects.html">Projects</a></li>
+							<li><a href="../index.html">Projects</a></li>
+							<li><a href="../work.html">Work</a></li>
 							<li><a href="../aboutMe.html">About Me</a></li>
 							<li><a href="../resume.html">Resume</a></li>
 							<li class="active"><a href="housePricePrediction.html">House price prediction [Kaggle]</a></li>
@@ -198,11 +198,11 @@
                                     measures the contribution of each leaf node to the overall loss. <br>
                                     Therefore, to split a leaf node, the gain is defined as:
 
-                                    $$\begin{equation}gain=\frac{1}{2}[\frac{G^2_L}{S_L+\lambda}+\frac{G^2_R}{S_R+\lambda}+\frac{G^2_L}{S+\lambda}]\end{equation} - \gamma$$
+                                    $$\begin{equation}gain=\frac{1}{2}[\frac{G^2_L}{S_L+\lambda}+\frac{G^2_R}{S_R+\lambda}+\frac{G^2_L}{S+\lambda}] - \gamma\end{equation}$$
 
                                     Then multiply the result of this iteration h_m (x_i) by learning rate ν and add it to the result of the previous iteration
 
-                                    $$\begin{equation} \hat{f}^{(m)}(x_i) = \hat{(f)}^{(m-1)}(x_i) + vh_m(x_i) \end{equation}.$$
+                                    $$\begin{equation} \hat{f}^{(m)}(x_i) = \hat{(f)}^{(m-1)}(x_i) + vh_m(x_i). \end{equation}$$
                                 </p>
 
 
